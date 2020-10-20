@@ -6,7 +6,10 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features"
+        features = "src/test/resources/features",
+        glue="com/vytrack/step_definitions",
+        dryRun = false,
+        tags = "@navigate"
 )
 public class CukesRunner {
 
