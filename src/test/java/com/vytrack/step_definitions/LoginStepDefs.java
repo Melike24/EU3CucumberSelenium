@@ -1,15 +1,19 @@
 package com.vytrack.step_definitions;
 
+import com.vytrack.utilities.ConfigurationReader;
+import com.vytrack.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebDriver;
 
 public class LoginStepDefs {
 
     @Given("the user is on the login page")
     public void the_user_is_on_the_login_page() throws InterruptedException {
-        Thread.sleep(5000);
-        System.out.println("I open browser and navigate to vytrack login page");
+        String url = ConfigurationReader.get("url");
+        //WebDriver driver = Driver.get();
+        Driver.get().get(url); //line for getting webpage in cucumber
     }
 
     @When("the user enters the driver information")
